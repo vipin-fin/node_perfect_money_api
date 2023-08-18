@@ -1,0 +1,8 @@
+{
+  "PAYEE_ACCOUNT": "U43938684",
+  "PAYMENT_AMOUNT": "10",
+  "PAYMENT_UNITS": "USD",
+  "PAYMENT_ID": "12345test",
+  "SUGGESTED_MEMO": "Testign of small payment",
+  "PAYMENT_BATCH_NUM": "0"
+}

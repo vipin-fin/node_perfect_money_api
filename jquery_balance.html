@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Querying Account Balance</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <script>
+        $(document).ready(function () {
+            // Define the URL with query parameters
+            var url = 'https://perfectmoney.com/acct/balance.asp?AccountID=10000&PassPhrase=111111';
+
+            // Make an AJAX GET request
+            $.ajax({
+                url: url,
+                type: 'GET',
+                success: function (response) {
+                    // Parse the response and find hidden fields
+                    var hiddenFields = $(response).find('input[type="hidden"]');
+                    var data = {};
+
+                    hiddenFields.each(function (index, element) {
+                        var name = $(element).attr('name');
+                        var value = $(element).attr('value');
+                        data[name] = value;
+                    });
+
+                    console.log(data);
+                },
+                error: function (error) {
+                    console.error('Error opening URL:', error.statusText);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
