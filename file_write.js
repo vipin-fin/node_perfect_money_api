@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 // Use bodyParser middleware to parse JSON and urlencoded data
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
-app.use(logger('dev'));
+// app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(logger('dev'));
 
 // success-payment
-app.post('/api/successPayment', (req, res) => {
+app.post('/api/v1/successPayment', (req, res) => {
     const data = req.body;
     let fileName = 'successData.json';
     // Convert the data to a JSON string
@@ -38,7 +38,7 @@ app.post('/api/successPayment', (req, res) => {
 
 
 // cancel-payment
-app.post('/api/cancelPayment', (req, res) => {
+app.post('/api/v1/cancelPayment', (req, res) => {
     const data = req.body;
     let fileName = 'cancelData.json';
     // Convert the data to a JSON string
