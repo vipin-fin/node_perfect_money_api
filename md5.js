@@ -15,14 +15,14 @@ console.log("🚀 ~ file: md5.js:11 ~ reference:", reference)
 let timestamp = Math.floor(moment().format('x') / 1000);
 console.log("🚀 ~ file: md5.js:15 ~ timestamp:", timestamp)
 
-let PAYMENT_ID = '20079-1705060053';
+let PAYMENT_ID = '20079-1705303482';
 let PAYEE_ACCOUNT = 'U42541229';
 let PAYMENT_AMOUNT = '0.1';
 let PAYMENT_UNITS = 'USD';
-let PAYMENT_BATCH_NUM = '563651604';
+let PAYMENT_BATCH_NUM = '564181361';
 let PAYER_ACCOUNT = 'U45461501';
 let AlternateMerchantPassphraseHash = 'E4815FLkE6HhacquHhWuRHDnP';  // This should be Md5 value of original AltPassphrase
-let TIMESTAMPGMT = '1705059816';
+let TIMESTAMPGMT = '1705303251';
 // PAYMENT_ID:PAYEE_ACCOUNT:PAYMENT_AMOUNT:PAYMENT_UNITS:PAYMENT_BATCH_NUM:PAYER_ACCOUNT:AlternateMerchantPassphraseHash:TIMESTAMPGMT
 // BA-103:U40040094:0.01:USD:540185452:U45461501:35T6n36cTBvDZMeapOAzyNhCp:1694429998
 
@@ -39,6 +39,22 @@ console.log("==>>>==>>>==vk==>>> ~ file: md5.js:32 ~ inputString~", inputString)
 
 const md5Hash = generateMD5Hash(inputString).toUpperCase();
 console.log(`MD5 Hash for '${inputString}': ${md5Hash}`);
+
+/* ----- Start::remove this block code ----- */
+let params = {}
+params.invoice_id =  '20079-1705060053';
+let user_id = params.invoice_id.split("-")[0]
+console.log("==>>>==>>>==vk==>>> ~ file: md5.js:47 ~ user_id~", user_id)
+
+params.username = 'aaainter ';
+let userParams = {username: 'aaainter  '}
+let uname = userParams.username.split(" ").join("").toUpperCase(); 
+console.log("==>>>==>>>==vk==>>> ~ file: md5.js:52 ~ uname~", uname)
+
+let pname = params.username.split(" ").join("").toUpperCase()
+console.log("==>>>==>>>==vk==>>> ~ file: md5.js:55 ~ pname~", pname)
+
+/* ----- End::remove this block code ----- */
 
 
 
